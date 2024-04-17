@@ -1,8 +1,8 @@
 # Используем официальный образ Jenkins LTS как базовый
 FROM jenkins/jenkins:lts
 
-# Устанавливаем дополнительные плагины
-RUN /usr/local/bin/install-plugins.sh \
+# Устанавливаем дополнительные плагины с помощью jenkins-plugin-cli
+RUN jenkins-plugin-cli --plugins \
     git \
     job-dsl \
     workflow-aggregator \
